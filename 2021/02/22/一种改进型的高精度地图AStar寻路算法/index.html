@@ -4,15 +4,15 @@
   <meta charset="utf-8">
   
   
-  <title>More Effective C++ 阅读笔记 -- Post 1 | Xingjiang&#39;s Blogx</title>
+  <title>一种改进型的高精度地图AStar寻路算法 | Xingjiang&#39;s Blogx</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta property="og:type" content="article">
-<meta property="og:title" content="More Effective C++ 阅读笔记 -- Post 1">
-<meta property="og:url" content="http://xingjiangyu.github.io/2021/02/22/More-Effective-C++-%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/index.html">
+<meta property="og:title" content="一种改进型的高精度地图AStar寻路算法">
+<meta property="og:url" content="http://xingjiangyu.github.io/2021/02/22/%E4%B8%80%E7%A7%8D%E6%94%B9%E8%BF%9B%E5%9E%8B%E7%9A%84%E9%AB%98%E7%B2%BE%E5%BA%A6%E5%9C%B0%E5%9B%BEAStar%E5%AF%BB%E8%B7%AF%E7%AE%97%E6%B3%95/index.html">
 <meta property="og:site_name" content="Xingjiang&#39;s Blogx">
 <meta property="og:locale">
-<meta property="article:published_time" content="2021-02-22T02:53:26.000Z">
-<meta property="article:modified_time" content="2021-02-22T03:00:36.298Z">
+<meta property="article:published_time" content="2021-02-22T03:27:48.000Z">
+<meta property="article:modified_time" content="2021-02-22T03:27:48.268Z">
 <meta property="article:author" content="XJ Yu">
 <meta property="article:tag" content="Blender Python, Multi-View Geometry, CPP Programming, Machine Learning">
 <meta name="twitter:card" content="summary">
@@ -76,10 +76,10 @@
 </header>
 
       <div class="outer">
-        <section id="main"><article id="post-More-Effective-C++-阅读笔记" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+        <section id="main"><article id="post-一种改进型的高精度地图AStar寻路算法" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2021/02/22/More-Effective-C++-%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/" class="article-date">
-  <time class="dt-published" datetime="2021-02-22T02:53:26.000Z" itemprop="datePublished">2021-02-22</time>
+    <a href="/2021/02/22/%E4%B8%80%E7%A7%8D%E6%94%B9%E8%BF%9B%E5%9E%8B%E7%9A%84%E9%AB%98%E7%B2%BE%E5%BA%A6%E5%9C%B0%E5%9B%BEAStar%E5%AF%BB%E8%B7%AF%E7%AE%97%E6%B3%95/" class="article-date">
+  <time class="dt-published" datetime="2021-02-22T03:27:48.000Z" itemprop="datePublished">2021-02-22</time>
 </a>
     
   </div>
@@ -90,7 +90,7 @@
         
   
     <h1 class="p-name article-title" itemprop="headline name">
-      More Effective C++ 阅读笔记 -- Post 1
+      一种改进型的高精度地图AStar寻路算法
     </h1>
   
 
@@ -102,7 +102,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://xingjiangyu.github.io/2021/02/22/More-Effective-C++-%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/" data-id="cklg0zedq00056kuf7calewhr" data-title="More Effective C++ 阅读笔记 -- Post 1" class="article-share-link">Teilen</a>
+      <a data-url="http://xingjiangyu.github.io/2021/02/22/%E4%B8%80%E7%A7%8D%E6%94%B9%E8%BF%9B%E5%9E%8B%E7%9A%84%E9%AB%98%E7%B2%BE%E5%BA%A6%E5%9C%B0%E5%9B%BEAStar%E5%AF%BB%E8%B7%AF%E7%AE%97%E6%B3%95/" data-id="cklg0zedo00036kuffd1ud06u" data-title="一种改进型的高精度地图AStar寻路算法" class="article-share-link">Teilen</a>
       
       
       
@@ -112,19 +112,19 @@
     
 <nav id="article-nav">
   
-    <a href="/2021/02/22/%E3%80%8AMulti-View-Geometry-in-Computer-Vision%E3%80%8B%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2021/02/22/%E5%9F%BA%E4%BA%8EKDTree%E7%9A%84%E9%AB%98%E7%B2%BE%E5%BA%A6%E5%9C%B0%E5%9B%BE%E8%BD%A6%E9%81%93%E5%AE%9A%E4%BD%8D%E7%AE%97%E6%B3%95/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Neuer</strong>
       <div class="article-nav-title">
         
-          《Multi-View Geometry in Computer Vision》阅读笔记 -- Post 1
+          基于KDTree的高精度地图车道定位算法
         
       </div>
     </a>
   
   
-    <a href="/2021/02/21/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2021/02/22/%E7%8A%B6%E6%80%81%E7%AE%80%E5%8D%95%E8%AE%B0%E5%BD%95/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Älter</strong>
-      <div class="article-nav-title">This Blog&#39;s Hello World</div>
+      <div class="article-nav-title">状态简单记录</div>
     </a>
   
 </nav>
