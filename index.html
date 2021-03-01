@@ -78,8 +78,8 @@
   
     <article id="post-Blender-Addon-建图工具-开发日志" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2021/02/25/Blender-Addon-%E5%BB%BA%E5%9B%BE%E5%B7%A5%E5%85%B7-%E5%BC%80%E5%8F%91%E6%97%A5%E5%BF%97/" class="article-date">
-  <time class="dt-published" datetime="2021-02-25T08:31:20.000Z" itemprop="datePublished">2021-02-25</time>
+    <a href="/2021/03/01/Blender-Addon-%E5%BB%BA%E5%9B%BE%E5%B7%A5%E5%85%B7-%E5%BC%80%E5%8F%91%E6%97%A5%E5%BF%97/" class="article-date">
+  <time class="dt-published" datetime="2021-03-01T01:31:20.000Z" itemprop="datePublished">2021-03-01</time>
 </a>
     
   </div>
@@ -90,7 +90,7 @@
         
   
     <h1 itemprop="name">
-      <a class="p-name article-title" href="/2021/02/25/Blender-Addon-%E5%BB%BA%E5%9B%BE%E5%B7%A5%E5%85%B7-%E5%BC%80%E5%8F%91%E6%97%A5%E5%BF%97/">Blender Addon 建图工具 开发日志</a>
+      <a class="p-name article-title" href="/2021/03/01/Blender-Addon-%E5%BB%BA%E5%9B%BE%E5%B7%A5%E5%85%B7-%E5%BC%80%E5%8F%91%E6%97%A5%E5%BF%97/">Blender Addon 建图工具 开发日志</a>
     </h1>
   
 
@@ -121,8 +121,10 @@
 </li>
 <li><p><strong>命名道路(30mins)</strong></p>
 </li>
-<li><p><strong>拉出马路牙子(30mins)</strong></p>
+<li><p><del><strong>拉出马路牙子(30mins)</strong></del></p>
 </li>
+</ul>
+<ul>
 <li><p><strong>剥离资源库(2h)</strong></p>
 </li>
 <li><p><input disabled="" type="checkbox">  解决道路沿线放置bug(2h)</p>
@@ -143,7 +145,51 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://xingjiangyu.github.io/2021/02/25/Blender-Addon-%E5%BB%BA%E5%9B%BE%E5%B7%A5%E5%85%B7-%E5%BC%80%E5%8F%91%E6%97%A5%E5%BF%97/" data-id="cklknpvcg00000ck64j5mbnxc" data-title="Blender Addon 建图工具 开发日志" class="article-share-link">Partager</a>
+      <a data-url="http://xingjiangyu.github.io/2021/03/01/Blender-Addon-%E5%BB%BA%E5%9B%BE%E5%B7%A5%E5%85%B7-%E5%BC%80%E5%8F%91%E6%97%A5%E5%BF%97/" data-id="cklq17w0b00001sk6eupi6saf" data-title="Blender Addon 建图工具 开发日志" class="article-share-link">Partager</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-一种多段线转分段参数曲线的拟合方法" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/02/25/%E4%B8%80%E7%A7%8D%E5%A4%9A%E6%AE%B5%E7%BA%BF%E8%BD%AC%E5%88%86%E6%AE%B5%E5%8F%82%E6%95%B0%E6%9B%B2%E7%BA%BF%E7%9A%84%E6%8B%9F%E5%90%88%E6%96%B9%E6%B3%95/" class="article-date">
+  <time class="dt-published" datetime="2021-02-25T14:36:58.000Z" itemprop="datePublished">2021-02-25</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2021/02/25/%E4%B8%80%E7%A7%8D%E5%A4%9A%E6%AE%B5%E7%BA%BF%E8%BD%AC%E5%88%86%E6%AE%B5%E5%8F%82%E6%95%B0%E6%9B%B2%E7%BA%BF%E7%9A%84%E6%8B%9F%E5%90%88%E6%96%B9%E6%B3%95/">一种多段线转分段参数曲线的拟合方法</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>本问题产生于需要将手绘的多段线转换为可以被</p>
+<p>的Geometry Record所描述的多段参数曲线。</p>
+<h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>给定二维空间中的一系列的有向点集（或者说一段多段线），默认该点集不会成环或者多段线不会和自己相交。现给定若干个参数曲线类型（按OpenDrive 1.6限定：直线，圆弧，欧拉螺旋，三次参数曲线），需要找到一种方法，将该多段线转换为由上述限定类型曲线组成的多段参数曲线，转换后的曲线应当曲率连续，且与原多段线的误差尽可能小。</p>
+<h2 id="问题分解"><a href="#问题分解" class="headerlink" title="问题分解"></a>问题分解</h2><p>贝塞尔曲线的回顾和拼接</p>
+<p>折线转分段贝塞尔曲线</p>
+<p>贝塞尔曲线到三次参数曲线的转换</p>
+<h2 id="拓展：三维空间中的点集"><a href="#拓展：三维空间中的点集" class="headerlink" title="拓展：三维空间中的点集"></a>拓展：三维空间中的点集</h2>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://xingjiangyu.github.io/2021/02/25/%E4%B8%80%E7%A7%8D%E5%A4%9A%E6%AE%B5%E7%BA%BF%E8%BD%AC%E5%88%86%E6%AE%B5%E5%8F%82%E6%95%B0%E6%9B%B2%E7%BA%BF%E7%9A%84%E6%8B%9F%E5%90%88%E6%96%B9%E6%B3%95/" data-id="cklq17w0o00051sk67jae2cke" data-title="一种多段线转分段参数曲线的拟合方法" class="article-share-link">Partager</a>
       
       
       
@@ -177,7 +223,7 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <p>Welcome to <a href="https://xingjiangyu.github.io/">Xingjiang’s Blog</a>! This is the very first post introduces the motivation of building this blog and basic ideas about it. If you got any questions while reading, please email to “<a href="mailto:&#x79;&#x75;&#115;&#116;&#x61;&#114;&#x72;&#x40;&#49;&#54;&#51;&#x2e;&#99;&#x6f;&#x6d;">&#x79;&#x75;&#115;&#116;&#x61;&#114;&#x72;&#x40;&#49;&#54;&#51;&#x2e;&#99;&#x6f;&#x6d;</a>“ since I have not figure out the comment mechanism of Hexo by far.</p>
+        <p>Welcome to <a href="https://xingjiangyu.github.io/">Xingjiang’s Blog</a>! This is the very first post introduces the motivation of building this blog and basic ideas about it. If you got any questions while reading, please email to “<a href="mailto:&#121;&#x75;&#115;&#x74;&#x61;&#114;&#x72;&#x40;&#49;&#x36;&#51;&#46;&#99;&#111;&#109;">&#121;&#x75;&#115;&#x74;&#x61;&#114;&#x72;&#x40;&#49;&#x36;&#51;&#46;&#99;&#111;&#109;</a>“ since I have not figure out the comment mechanism of Hexo by far.</p>
 <p>Since I’m now working in China, most of my posts will be Written in Chinese | 中文.  前面欢迎语顺手就写了英文了懒得改了（</p>
 <h2 id="关于本博客-About-the-blog"><a href="#关于本博客-About-the-blog" class="headerlink" title="关于本博客(About the blog)"></a>关于本博客(About the blog)</h2><h3 id="撰写动机-Motivation"><a href="#撰写动机-Motivation" class="headerlink" title="撰写动机(Motivation)"></a>撰写动机(Motivation)</h3><p>始于21年春节，听小虎(<a target="_blank" rel="noopener" href="https://github.com/HackyLee">github</a>)聊曾经的同学沅（<a target="_blank" rel="noopener" href="https://leyuanheart.github.io/">githubpage</a>）的自学进阶之路，回家后看到了沅的详实博客，果真如印象中的本人一般踏实用心。自己多次试图搭建blog都因琐事分心，又嫌写post太花时间一直搁置，如今看到沅的博客subtitle: “<em>我只是想把学过的知识真正变成自己的东西。慢下来，或许才比较快</em>“，多次花时间在捡起旧知识上的我不可谓感触不深。</p>
 <p>而一篇<a target="_blank" rel="noopener" href="https://www.zhihu.com/question/22164041/answer/148128347">知乎回答</a>中关于积累对于经验思维和认知的重要性的叙述，则是彻底讲明白了学习中如何快速熟悉一个新邻域的关键所在。至少对于大多数人来说，起决定性作用的并非天赋，而是日复一日的积累和实践。</p>
@@ -198,45 +244,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://xingjiangyu.github.io/2021/02/24/hello-world/" data-id="cklknpvcr00020ck68phc2kq8" data-title="This Blog&#39;s Hello World" class="article-share-link">Partager</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-一种多段线转分段参数曲线的拟合方法" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2021/02/22/%E4%B8%80%E7%A7%8D%E5%A4%9A%E6%AE%B5%E7%BA%BF%E8%BD%AC%E5%88%86%E6%AE%B5%E5%8F%82%E6%95%B0%E6%9B%B2%E7%BA%BF%E7%9A%84%E6%8B%9F%E5%90%88%E6%96%B9%E6%B3%95/" class="article-date">
-  <time class="dt-published" datetime="2021-02-22T14:36:58.000Z" itemprop="datePublished">2021-02-22</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2021/02/22/%E4%B8%80%E7%A7%8D%E5%A4%9A%E6%AE%B5%E7%BA%BF%E8%BD%AC%E5%88%86%E6%AE%B5%E5%8F%82%E6%95%B0%E6%9B%B2%E7%BA%BF%E7%9A%84%E6%8B%9F%E5%90%88%E6%96%B9%E6%B3%95/">一种多段线转分段参数曲线的拟合方法</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://xingjiangyu.github.io/2021/02/22/%E4%B8%80%E7%A7%8D%E5%A4%9A%E6%AE%B5%E7%BA%BF%E8%BD%AC%E5%88%86%E6%AE%B5%E5%8F%82%E6%95%B0%E6%9B%B2%E7%BA%BF%E7%9A%84%E6%8B%9F%E5%90%88%E6%96%B9%E6%B3%95/" data-id="cklknpvct00040ck69nacgix3" data-title="一种多段线转分段参数曲线的拟合方法" class="article-share-link">Partager</a>
+      <a data-url="http://xingjiangyu.github.io/2021/02/24/hello-world/" data-id="cklq17w0j00021sk6326ehxac" data-title="This Blog&#39;s Hello World" class="article-share-link">Partager</a>
       
       
       
@@ -275,7 +283,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://xingjiangyu.github.io/2021/02/22/C++-STL-%E7%9F%A5%E8%AF%86%E7%82%B9%E6%95%B4%E7%90%86%E5%92%8C%E5%AE%9E%E8%B7%B5/" data-id="cklknpvcq00010ck6a8ueh6dy" data-title="C++ STL 知识点整理和实践" class="article-share-link">Partager</a>
+      <a data-url="http://xingjiangyu.github.io/2021/02/22/C++-STL-%E7%9F%A5%E8%AF%86%E7%82%B9%E6%95%B4%E7%90%86%E5%92%8C%E5%AE%9E%E8%B7%B5/" data-id="cklq17w0n00031sk69uusemet" data-title="C++ STL 知识点整理和实践" class="article-share-link">Partager</a>
       
       
       
@@ -313,7 +321,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://xingjiangyu.github.io/2021/02/22/%E5%9F%BA%E4%BA%8EKDTree%E7%9A%84%E9%AB%98%E7%B2%BE%E5%BA%A6%E5%9C%B0%E5%9B%BE%E8%BD%A6%E9%81%93%E5%AE%9A%E4%BD%8D%E7%AE%97%E6%B3%95/" data-id="cklknpvcz00070ck6906bbspq" data-title="基于KDTree的高精度地图车道定位算法" class="article-share-link">Partager</a>
+      <a data-url="http://xingjiangyu.github.io/2021/02/22/%E5%9F%BA%E4%BA%8EKDTree%E7%9A%84%E9%AB%98%E7%B2%BE%E5%BA%A6%E5%9C%B0%E5%9B%BE%E8%BD%A6%E9%81%93%E5%AE%9A%E4%BD%8D%E7%AE%97%E6%B3%95/" data-id="cklq17w0q00071sk62isq858x" data-title="基于KDTree的高精度地图车道定位算法" class="article-share-link">Partager</a>
       
       
       
@@ -351,7 +359,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://xingjiangyu.github.io/2021/02/22/%E4%B8%80%E7%A7%8D%E6%94%B9%E8%BF%9B%E5%9E%8B%E7%9A%84%E9%AB%98%E7%B2%BE%E5%BA%A6%E5%9C%B0%E5%9B%BEAStar%E5%AF%BB%E8%B7%AF%E7%AE%97%E6%B3%95/" data-id="cklknpvcu00050ck6cx7sd6z3" data-title="一种改进型的高精度地图AStar寻路算法" class="article-share-link">Partager</a>
+      <a data-url="http://xingjiangyu.github.io/2021/02/22/%E4%B8%80%E7%A7%8D%E6%94%B9%E8%BF%9B%E5%9E%8B%E7%9A%84%E9%AB%98%E7%B2%BE%E5%BA%A6%E5%9C%B0%E5%9B%BEAStar%E5%AF%BB%E8%B7%AF%E7%AE%97%E6%B3%95/" data-id="cklq17w0p00061sk6hgl7b87i" data-title="一种改进型的高精度地图AStar寻路算法" class="article-share-link">Partager</a>
       
       
       
@@ -391,7 +399,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://xingjiangyu.github.io/2021/02/22/%E7%8A%B6%E6%80%81%E7%AE%80%E5%8D%95%E8%AE%B0%E5%BD%95/" data-id="cklknpvd300080ck67vqlbf4b" data-title="状态简单记录" class="article-share-link">Partager</a>
+      <a data-url="http://xingjiangyu.github.io/2021/02/22/%E7%8A%B6%E6%80%81%E7%AE%80%E5%8D%95%E8%AE%B0%E5%BD%95/" data-id="cklq17w0v00081sk605wvc9oh" data-title="状态简单记录" class="article-share-link">Partager</a>
       
       
       
@@ -431,7 +439,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://xingjiangyu.github.io/2021/02/22/%E3%80%8AMulti-View-Geometry-in-Computer-Vision%E3%80%8B%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/" data-id="cklknpvcy00060ck62o4gh1if" data-title="《Multi-View Geometry in Computer Vision》阅读笔记 -- Post 1" class="article-share-link">Partager</a>
+      <a data-url="http://xingjiangyu.github.io/2021/02/22/%E3%80%8AMulti-View-Geometry-in-Computer-Vision%E3%80%8B%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/" data-id="cklq17w0n00041sk61j77629d" data-title="《Multi-View Geometry in Computer Vision》阅读笔记 -- Post 1" class="article-share-link">Partager</a>
       
       
       
@@ -469,7 +477,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://xingjiangyu.github.io/2021/02/22/More-Effective-C++-%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/" data-id="cklknpvcs00030ck692eg2p9b" data-title="More Effective C++ 阅读笔记 -- Post 1" class="article-share-link">Partager</a>
+      <a data-url="http://xingjiangyu.github.io/2021/02/22/More-Effective-C++-%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/" data-id="cklq17w0i00011sk62uodam26" data-title="More Effective C++ 阅读笔记 -- Post 1" class="article-share-link">Partager</a>
       
       
       
@@ -513,7 +521,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/02/">February 2021</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/03/">March 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/02/">February 2021</a></li></ul>
     </div>
   </div>
 
@@ -526,15 +534,15 @@
       <ul>
         
           <li>
-            <a href="/2021/02/25/Blender-Addon-%E5%BB%BA%E5%9B%BE%E5%B7%A5%E5%85%B7-%E5%BC%80%E5%8F%91%E6%97%A5%E5%BF%97/">Blender Addon 建图工具 开发日志</a>
+            <a href="/2021/03/01/Blender-Addon-%E5%BB%BA%E5%9B%BE%E5%B7%A5%E5%85%B7-%E5%BC%80%E5%8F%91%E6%97%A5%E5%BF%97/">Blender Addon 建图工具 开发日志</a>
+          </li>
+        
+          <li>
+            <a href="/2021/02/25/%E4%B8%80%E7%A7%8D%E5%A4%9A%E6%AE%B5%E7%BA%BF%E8%BD%AC%E5%88%86%E6%AE%B5%E5%8F%82%E6%95%B0%E6%9B%B2%E7%BA%BF%E7%9A%84%E6%8B%9F%E5%90%88%E6%96%B9%E6%B3%95/">一种多段线转分段参数曲线的拟合方法</a>
           </li>
         
           <li>
             <a href="/2021/02/24/hello-world/">This Blog&#39;s Hello World</a>
-          </li>
-        
-          <li>
-            <a href="/2021/02/22/%E4%B8%80%E7%A7%8D%E5%A4%9A%E6%AE%B5%E7%BA%BF%E8%BD%AC%E5%88%86%E6%AE%B5%E5%8F%82%E6%95%B0%E6%9B%B2%E7%BA%BF%E7%9A%84%E6%8B%9F%E5%90%88%E6%96%B9%E6%B3%95/">一种多段线转分段参数曲线的拟合方法</a>
           </li>
         
           <li>
