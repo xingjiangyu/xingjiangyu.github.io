@@ -62,12 +62,12 @@
       </nav>
       <nav id="sub-nav">
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
       </nav>
       <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Rechercher"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://xingjiangyu.github.io"></form>
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://xingjiangyu.github.io"></form>
       </div>
     </div>
   </div>
@@ -78,8 +78,8 @@
   
     <article id="post-Blender-Addon-建图工具-开发日志" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2021/03/01/Blender-Addon-%E5%BB%BA%E5%9B%BE%E5%B7%A5%E5%85%B7-%E5%BC%80%E5%8F%91%E6%97%A5%E5%BF%97/" class="article-date">
-  <time class="dt-published" datetime="2021-03-01T01:31:20.000Z" itemprop="datePublished">2021-03-01</time>
+    <a href="/2021/03/11/Blender-Addon-%E5%BB%BA%E5%9B%BE%E5%B7%A5%E5%85%B7-%E5%BC%80%E5%8F%91%E6%97%A5%E5%BF%97/" class="article-date">
+  <time class="dt-published" datetime="2021-03-11T07:22:53.000Z" itemprop="datePublished">2021-03-11</time>
 </a>
     
   </div>
@@ -90,7 +90,7 @@
         
   
     <h1 itemprop="name">
-      <a class="p-name article-title" href="/2021/03/01/Blender-Addon-%E5%BB%BA%E5%9B%BE%E5%B7%A5%E5%85%B7-%E5%BC%80%E5%8F%91%E6%97%A5%E5%BF%97/">Blender Addon 建图工具 开发日志</a>
+      <a class="p-name article-title" href="/2021/03/11/Blender-Addon-%E5%BB%BA%E5%9B%BE%E5%B7%A5%E5%85%B7-%E5%BC%80%E5%8F%91%E6%97%A5%E5%BF%97/">Blender Addon 建图工具 开发日志</a>
     </h1>
   
 
@@ -98,11 +98,36 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <h2 id="当前进度和计划更新（2021-02-25）"><a href="#当前进度和计划更新（2021-02-25）" class="headerlink" title="当前进度和计划更新（2021-02-25）"></a>当前进度和计划更新（2021-02-25）</h2><p>演示视频前需要的改进处：</p>
-<p>点击道路mesh生成边界线curve，然后自动选中curve，点击导入在curve上自动import Object并绑定</p>
+        <h2 id="第一次Demo视频演示总结"><a href="#第一次Demo视频演示总结" class="headerlink" title="第一次Demo视频演示总结"></a>第一次Demo视频演示总结</h2><p>视频建议：</p>
+<ol>
+<li>演示用词更加规范</li>
+<li>逻辑性需要加强，可以按照“绘制的道路类型（直线，曲线，单双车道等)– 车道编辑 – 物体放置” 这样的顺序组织。</li>
+<li>场景丰富度需要增加，比如放一排树之类的。</li>
+</ol>
+<p>待解决Bugs：</p>
+<pre><code>1. 重复点击新建道路后会由于Operator状态未清空生成新的Mesh -- 可考虑使用SceneRecord作为状态指示
+ 2. 交通锥等导入模型由于Origin未调整导致部分模型陷入道路表面下
+ 3. 绿化带时不时无法生成 -- 可能是Road Mesh生成函数的检查条件导致
+</code></pre>
+<p>待实现features:</p>
+<p>​    和 2021-03-01 计划的一致，另有增加：</p>
+<ul>
+<li><input disabled="" type="checkbox"> 道路的z轴方向坡度调整</li>
+</ul>
+<h2 id="当前进度和计划更新（2021-03-01）"><a href="#当前进度和计划更新（2021-03-01）" class="headerlink" title="当前进度和计划更新（2021-03-01）"></a>当前进度和计划更新（2021-03-01）</h2><p>演示视频前需要的改进处：</p>
+<ul>
+<li><input disabled="" type="checkbox"> 点击道路mesh生成边界线curve，然后自动选中curve，点击导入在curve上自动import Object并绑定</li>
+</ul>
 <p>​                                                                                                点击“多个”自动铺满，并可以调间距，范围</p>
-<p><strong>新建</strong>时删除mesh，状态栏条目也删除（删除状态栏条目，mesh也删除）</p>
-<p>UI美化</p>
+<ul>
+<li><p><strong>新建</strong>时删除mesh，状态栏条目也删除（删除状态栏条目，mesh也删除）</p>
+</li>
+<li><p><input disabled="" type="checkbox">  导入图片</p>
+</li>
+<li><p><input checked="" disabled="" type="checkbox">  UI美化</p>
+</li>
+</ul>
+<p>通过Constraint绑定物体到曲线有一个问题，就是曲线的Origin必须要set to Geometry， 物体的Origin亦需要保持在一个接近其中心的位置，两者绑定前一刻的Origin相对关系似乎也有讲究，需要在之后总结记录。</p>
 <h2 id="计划中的操作、图形和数据的联动（2021-02-24）"><a href="#计划中的操作、图形和数据的联动（2021-02-24）" class="headerlink" title="计划中的操作、图形和数据的联动（2021-02-24）"></a>计划中的操作、图形和数据的联动（2021-02-24）</h2><p>昨天参考BlenderTodo插件做了一个类似状态窗的Panel，但是其除了视觉上让这个插件更“软件”化，想要进一步用他体现出（Road-lane-obj/roadmark的层级关系），或者同步对应于Mesh的增删查改功能，还是有比较多要解决的坑。</p>
 <p>当前待完成的难点所在：</p>
 <ol>
@@ -127,11 +152,11 @@
 <ul>
 <li><p><strong>剥离资源库(2h)</strong></p>
 </li>
-<li><p><input disabled="" type="checkbox">  解决道路沿线放置bug(2h)</p>
+<li><p><input checked="" disabled="" type="checkbox">  解决道路沿线放置bug(2h)</p>
 </li>
-<li><p><input disabled="" type="checkbox">  多重放置功能 完善</p>
+<li><p><input checked="" disabled="" type="checkbox">  多重放置功能 完善</p>
 </li>
-<li><p><input disabled="" type="checkbox">  UI总成 – <strong>设计（20mins）</strong> – <strong>实现（1h）</strong></p>
+<li><p><input checked="" disabled="" type="checkbox">  UI总成 – <strong>设计（20mins）</strong> – <strong>实现（1h）</strong></p>
 </li>
 <li><p><strong>“导出”功能按钮，“保存”和“加载”功能呈现 (20mins)</strong></p>
 </li>
@@ -145,7 +170,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://xingjiangyu.github.io/2021/03/01/Blender-Addon-%E5%BB%BA%E5%9B%BE%E5%B7%A5%E5%85%B7-%E5%BC%80%E5%8F%91%E6%97%A5%E5%BF%97/" data-id="cklq17w0b00001sk6eupi6saf" data-title="Blender Addon 建图工具 开发日志" class="article-share-link">Partager</a>
+      <a data-url="http://xingjiangyu.github.io/2021/03/11/Blender-Addon-%E5%BB%BA%E5%9B%BE%E5%B7%A5%E5%85%B7-%E5%BC%80%E5%8F%91%E6%97%A5%E5%BF%97/" data-id="ckm4job7w00004kk690gog227" data-title="Blender Addon 建图工具 开发日志" class="article-share-link">Share</a>
       
       
       
@@ -189,7 +214,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://xingjiangyu.github.io/2021/02/25/%E4%B8%80%E7%A7%8D%E5%A4%9A%E6%AE%B5%E7%BA%BF%E8%BD%AC%E5%88%86%E6%AE%B5%E5%8F%82%E6%95%B0%E6%9B%B2%E7%BA%BF%E7%9A%84%E6%8B%9F%E5%90%88%E6%96%B9%E6%B3%95/" data-id="cklq17w0o00051sk67jae2cke" data-title="一种多段线转分段参数曲线的拟合方法" class="article-share-link">Partager</a>
+      <a data-url="http://xingjiangyu.github.io/2021/02/25/%E4%B8%80%E7%A7%8D%E5%A4%9A%E6%AE%B5%E7%BA%BF%E8%BD%AC%E5%88%86%E6%AE%B5%E5%8F%82%E6%95%B0%E6%9B%B2%E7%BA%BF%E7%9A%84%E6%8B%9F%E5%90%88%E6%96%B9%E6%B3%95/" data-id="ckm4job8900054kk63l5ggqeb" data-title="一种多段线转分段参数曲线的拟合方法" class="article-share-link">Share</a>
       
       
       
@@ -223,7 +248,7 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <p>Welcome to <a href="https://xingjiangyu.github.io/">Xingjiang’s Blog</a>! This is the very first post introduces the motivation of building this blog and basic ideas about it. If you got any questions while reading, please email to “<a href="mailto:&#121;&#x75;&#115;&#x74;&#x61;&#114;&#x72;&#x40;&#49;&#x36;&#51;&#46;&#99;&#111;&#109;">&#121;&#x75;&#115;&#x74;&#x61;&#114;&#x72;&#x40;&#49;&#x36;&#51;&#46;&#99;&#111;&#109;</a>“ since I have not figure out the comment mechanism of Hexo by far.</p>
+        <p>Welcome to <a href="https://xingjiangyu.github.io/">Xingjiang’s Blog</a>! This is the very first post introduces the motivation of building this blog and basic ideas about it. If you got any questions while reading, please email to “<a href="mailto:&#121;&#x75;&#x73;&#116;&#97;&#x72;&#114;&#64;&#49;&#x36;&#51;&#x2e;&#99;&#111;&#109;">&#121;&#x75;&#x73;&#116;&#97;&#x72;&#114;&#64;&#49;&#x36;&#51;&#x2e;&#99;&#111;&#109;</a>“ since I have not figure out the comment mechanism of Hexo by far.</p>
 <p>Since I’m now working in China, most of my posts will be Written in Chinese | 中文.  前面欢迎语顺手就写了英文了懒得改了（</p>
 <h2 id="关于本博客-About-the-blog"><a href="#关于本博客-About-the-blog" class="headerlink" title="关于本博客(About the blog)"></a>关于本博客(About the blog)</h2><h3 id="撰写动机-Motivation"><a href="#撰写动机-Motivation" class="headerlink" title="撰写动机(Motivation)"></a>撰写动机(Motivation)</h3><p>始于21年春节，听小虎(<a target="_blank" rel="noopener" href="https://github.com/HackyLee">github</a>)聊曾经的同学沅（<a target="_blank" rel="noopener" href="https://leyuanheart.github.io/">githubpage</a>）的自学进阶之路，回家后看到了沅的详实博客，果真如印象中的本人一般踏实用心。自己多次试图搭建blog都因琐事分心，又嫌写post太花时间一直搁置，如今看到沅的博客subtitle: “<em>我只是想把学过的知识真正变成自己的东西。慢下来，或许才比较快</em>“，多次花时间在捡起旧知识上的我不可谓感触不深。</p>
 <p>而一篇<a target="_blank" rel="noopener" href="https://www.zhihu.com/question/22164041/answer/148128347">知乎回答</a>中关于积累对于经验思维和认知的重要性的叙述，则是彻底讲明白了学习中如何快速熟悉一个新邻域的关键所在。至少对于大多数人来说，起决定性作用的并非天赋，而是日复一日的积累和实践。</p>
@@ -244,7 +269,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://xingjiangyu.github.io/2021/02/24/hello-world/" data-id="cklq17w0j00021sk6326ehxac" data-title="This Blog&#39;s Hello World" class="article-share-link">Partager</a>
+      <a data-url="http://xingjiangyu.github.io/2021/02/24/hello-world/" data-id="ckm4job8500034kk67g6ce307" data-title="This Blog&#39;s Hello World" class="article-share-link">Share</a>
       
       
       
@@ -283,7 +308,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://xingjiangyu.github.io/2021/02/22/C++-STL-%E7%9F%A5%E8%AF%86%E7%82%B9%E6%95%B4%E7%90%86%E5%92%8C%E5%AE%9E%E8%B7%B5/" data-id="cklq17w0n00031sk69uusemet" data-title="C++ STL 知识点整理和实践" class="article-share-link">Partager</a>
+      <a data-url="http://xingjiangyu.github.io/2021/02/22/C++-STL-%E7%9F%A5%E8%AF%86%E7%82%B9%E6%95%B4%E7%90%86%E5%92%8C%E5%AE%9E%E8%B7%B5/" data-id="ckm4job8300014kk6a9oh88b7" data-title="C++ STL 知识点整理和实践" class="article-share-link">Share</a>
       
       
       
@@ -321,7 +346,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://xingjiangyu.github.io/2021/02/22/%E5%9F%BA%E4%BA%8EKDTree%E7%9A%84%E9%AB%98%E7%B2%BE%E5%BA%A6%E5%9C%B0%E5%9B%BE%E8%BD%A6%E9%81%93%E5%AE%9A%E4%BD%8D%E7%AE%97%E6%B3%95/" data-id="cklq17w0q00071sk62isq858x" data-title="基于KDTree的高精度地图车道定位算法" class="article-share-link">Partager</a>
+      <a data-url="http://xingjiangyu.github.io/2021/02/22/%E5%9F%BA%E4%BA%8EKDTree%E7%9A%84%E9%AB%98%E7%B2%BE%E5%BA%A6%E5%9C%B0%E5%9B%BE%E8%BD%A6%E9%81%93%E5%AE%9A%E4%BD%8D%E7%AE%97%E6%B3%95/" data-id="ckm4job8b00074kk6alcg22uw" data-title="基于KDTree的高精度地图车道定位算法" class="article-share-link">Share</a>
       
       
       
@@ -359,7 +384,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://xingjiangyu.github.io/2021/02/22/%E4%B8%80%E7%A7%8D%E6%94%B9%E8%BF%9B%E5%9E%8B%E7%9A%84%E9%AB%98%E7%B2%BE%E5%BA%A6%E5%9C%B0%E5%9B%BEAStar%E5%AF%BB%E8%B7%AF%E7%AE%97%E6%B3%95/" data-id="cklq17w0p00061sk6hgl7b87i" data-title="一种改进型的高精度地图AStar寻路算法" class="article-share-link">Partager</a>
+      <a data-url="http://xingjiangyu.github.io/2021/02/22/%E4%B8%80%E7%A7%8D%E6%94%B9%E8%BF%9B%E5%9E%8B%E7%9A%84%E9%AB%98%E7%B2%BE%E5%BA%A6%E5%9C%B0%E5%9B%BEAStar%E5%AF%BB%E8%B7%AF%E7%AE%97%E6%B3%95/" data-id="ckm4job8a00064kk6frkh18q7" data-title="一种改进型的高精度地图AStar寻路算法" class="article-share-link">Share</a>
       
       
       
@@ -399,7 +424,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://xingjiangyu.github.io/2021/02/22/%E7%8A%B6%E6%80%81%E7%AE%80%E5%8D%95%E8%AE%B0%E5%BD%95/" data-id="cklq17w0v00081sk605wvc9oh" data-title="状态简单记录" class="article-share-link">Partager</a>
+      <a data-url="http://xingjiangyu.github.io/2021/02/22/%E7%8A%B6%E6%80%81%E7%AE%80%E5%8D%95%E8%AE%B0%E5%BD%95/" data-id="ckm4job8i00084kk6d4hn8vvk" data-title="状态简单记录" class="article-share-link">Share</a>
       
       
       
@@ -439,7 +464,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://xingjiangyu.github.io/2021/02/22/%E3%80%8AMulti-View-Geometry-in-Computer-Vision%E3%80%8B%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/" data-id="cklq17w0n00041sk61j77629d" data-title="《Multi-View Geometry in Computer Vision》阅读笔记 -- Post 1" class="article-share-link">Partager</a>
+      <a data-url="http://xingjiangyu.github.io/2021/02/22/%E3%80%8AMulti-View-Geometry-in-Computer-Vision%E3%80%8B%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/" data-id="ckm4job8600044kk65fco0m7y" data-title="《Multi-View Geometry in Computer Vision》阅读笔记 -- Post 1" class="article-share-link">Share</a>
       
       
       
@@ -477,7 +502,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://xingjiangyu.github.io/2021/02/22/More-Effective-C++-%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/" data-id="cklq17w0i00011sk62uodam26" data-title="More Effective C++ 阅读笔记 -- Post 1" class="article-share-link">Partager</a>
+      <a data-url="http://xingjiangyu.github.io/2021/02/22/More-Effective-C++-%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/" data-id="ckm4job8400024kk6bnoubfv1" data-title="More Effective C++ 阅读笔记 -- Post 1" class="article-share-link">Share</a>
       
       
       
@@ -500,7 +525,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Mot-clés</h3>
+    <h3 class="widget-title">Tags</h3>
     <div class="widget">
       <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/casual/" rel="tag">casual</a></li></ul>
     </div>
@@ -510,7 +535,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Nuage de mot-clés</h3>
+    <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
       <a href="/tags/casual/" style="font-size: 10px;">casual</a>
     </div>
@@ -529,12 +554,12 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Articles récents</h3>
+    <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
         
           <li>
-            <a href="/2021/03/01/Blender-Addon-%E5%BB%BA%E5%9B%BE%E5%B7%A5%E5%85%B7-%E5%BC%80%E5%8F%91%E6%97%A5%E5%BF%97/">Blender Addon 建图工具 开发日志</a>
+            <a href="/2021/03/11/Blender-Addon-%E5%BB%BA%E5%9B%BE%E5%B7%A5%E5%85%B7-%E5%BC%80%E5%8F%91%E6%97%A5%E5%BF%97/">Blender Addon 建图工具 开发日志</a>
           </li>
         
           <li>
@@ -567,7 +592,7 @@
     <div id="footer-info" class="inner">
       
       &copy; 2021 XJ Yu<br>
-      Propulsé par <a href="https://hexo.io/" target="_blank">Hexo</a>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
 </footer>
