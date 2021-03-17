@@ -98,19 +98,20 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <h2 id="第一次Demo视频演示总结"><a href="#第一次Demo视频演示总结" class="headerlink" title="第一次Demo视频演示总结"></a>第一次Demo视频演示总结</h2><p>视频建议：</p>
+        <h2 id="第一次Demo视频演示总结-03-11"><a href="#第一次Demo视频演示总结-03-11" class="headerlink" title="第一次Demo视频演示总结 (03-11)"></a>第一次Demo视频演示总结 (03-11)</h2><p>视频建议：</p>
 <ol>
 <li>演示用词更加规范</li>
 <li>逻辑性需要加强，可以按照“绘制的道路类型（直线，曲线，单双车道等)– 车道编辑 – 物体放置” 这样的顺序组织。</li>
 <li>场景丰富度需要增加，比如放一排树之类的。</li>
 </ol>
 <p>待解决Bugs：</p>
-<pre><code>1. 重复点击新建道路后会由于Operator状态未清空生成新的Mesh -- 可考虑使用SceneRecord作为状态指示
- 2. 交通锥等导入模型由于Origin未调整导致部分模型陷入道路表面下
- 3. 绿化带时不时无法生成 -- 可能是Road Mesh生成函数的检查条件导致
-</code></pre>
+<ol>
+<li>重复点击新建道路后会由于Operator状态未清空生成新的Mesh – 可考虑使用SceneRecord作为状态指示</li>
+<li>交通锥等导入模型由于Origin未调整导致部分模型陷入道路表面下</li>
+<li>绿化带时不时无法生成 – 可能是Road Mesh生成函数的检查条件导致</li>
+</ol>
 <p>待实现features:</p>
-<p>​    和 2021-03-01 计划的一致，另有增加：</p>
+<p>  和 2021-03-01 计划的一致，另有增加：</p>
 <ul>
 <li><input disabled="" type="checkbox"> 道路的z轴方向坡度调整</li>
 </ul>
@@ -170,7 +171,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://xingjiangyu.github.io/2021/03/11/Blender-Addon-%E5%BB%BA%E5%9B%BE%E5%B7%A5%E5%85%B7-%E5%BC%80%E5%8F%91%E6%97%A5%E5%BF%97/" data-id="ckm4job7w00004kk690gog227" data-title="Blender Addon 建图工具 开发日志" class="article-share-link">Share</a>
+      <a data-url="http://xingjiangyu.github.io/2021/03/11/Blender-Addon-%E5%BB%BA%E5%9B%BE%E5%B7%A5%E5%85%B7-%E5%BC%80%E5%8F%91%E6%97%A5%E5%BF%97/" data-id="ckmd93tcm0005sok66pedeblc" data-title="Blender Addon 建图工具 开发日志" class="article-share-link">Share</a>
       
       
       
@@ -210,11 +211,12 @@
 <h2 id="问题分解"><a href="#问题分解" class="headerlink" title="问题分解"></a>问题分解</h2><p>贝塞尔曲线的回顾和拼接</p>
 <p>折线转分段贝塞尔曲线</p>
 <p>贝塞尔曲线到三次参数曲线的转换</p>
+<h2 id="问题初探"><a href="#问题初探" class="headerlink" title="问题初探"></a>问题初探</h2><p>这几天关于Opendrive有一个临时的需求，简单说就是，给定两点及其位置处的预设Heading角度，我们需要计算出一条三次曲线<br>$$<br>u = a + bv + cv^2 +dv^3<br>$$<br>使得该三次曲线过两点并且在两点处切线斜率符合要求。很简单的高中计算。用Python实现如下：</p>
 <h2 id="拓展：三维空间中的点集"><a href="#拓展：三维空间中的点集" class="headerlink" title="拓展：三维空间中的点集"></a>拓展：三维空间中的点集</h2>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://xingjiangyu.github.io/2021/02/25/%E4%B8%80%E7%A7%8D%E5%A4%9A%E6%AE%B5%E7%BA%BF%E8%BD%AC%E5%88%86%E6%AE%B5%E5%8F%82%E6%95%B0%E6%9B%B2%E7%BA%BF%E7%9A%84%E6%8B%9F%E5%90%88%E6%96%B9%E6%B3%95/" data-id="ckm4job8900054kk63l5ggqeb" data-title="一种多段线转分段参数曲线的拟合方法" class="article-share-link">Share</a>
+      <a data-url="http://xingjiangyu.github.io/2021/02/25/%E4%B8%80%E7%A7%8D%E5%A4%9A%E6%AE%B5%E7%BA%BF%E8%BD%AC%E5%88%86%E6%AE%B5%E5%8F%82%E6%95%B0%E6%9B%B2%E7%BA%BF%E7%9A%84%E6%8B%9F%E5%90%88%E6%96%B9%E6%B3%95/" data-id="ckmd93tcn0006sok6crf46vib" data-title="一种多段线转分段参数曲线的拟合方法" class="article-share-link">Share</a>
       
       
       
@@ -248,7 +250,7 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <p>Welcome to <a href="https://xingjiangyu.github.io/">Xingjiang’s Blog</a>! This is the very first post introduces the motivation of building this blog and basic ideas about it. If you got any questions while reading, please email to “<a href="mailto:&#121;&#x75;&#x73;&#116;&#97;&#x72;&#114;&#64;&#49;&#x36;&#51;&#x2e;&#99;&#111;&#109;">&#121;&#x75;&#x73;&#116;&#97;&#x72;&#114;&#64;&#49;&#x36;&#51;&#x2e;&#99;&#111;&#109;</a>“ since I have not figure out the comment mechanism of Hexo by far.</p>
+        <p>Welcome to <a href="https://xingjiangyu.github.io/">Xingjiang’s Blog</a>! This is the very first post introduces the motivation of building this blog and basic ideas about it. If you got any questions while reading, please email to “<a href="mailto:&#x79;&#x75;&#x73;&#x74;&#97;&#114;&#x72;&#64;&#x31;&#x36;&#x33;&#x2e;&#x63;&#111;&#x6d;">&#x79;&#x75;&#x73;&#x74;&#97;&#114;&#x72;&#64;&#x31;&#x36;&#x33;&#x2e;&#x63;&#111;&#x6d;</a>“ since I have not figure out the comment mechanism of Hexo by far.</p>
 <p>Since I’m now working in China, most of my posts will be Written in Chinese | 中文.  前面欢迎语顺手就写了英文了懒得改了（</p>
 <h2 id="关于本博客-About-the-blog"><a href="#关于本博客-About-the-blog" class="headerlink" title="关于本博客(About the blog)"></a>关于本博客(About the blog)</h2><h3 id="撰写动机-Motivation"><a href="#撰写动机-Motivation" class="headerlink" title="撰写动机(Motivation)"></a>撰写动机(Motivation)</h3><p>始于21年春节，听小虎(<a target="_blank" rel="noopener" href="https://github.com/HackyLee">github</a>)聊曾经的同学沅（<a target="_blank" rel="noopener" href="https://leyuanheart.github.io/">githubpage</a>）的自学进阶之路，回家后看到了沅的详实博客，果真如印象中的本人一般踏实用心。自己多次试图搭建blog都因琐事分心，又嫌写post太花时间一直搁置，如今看到沅的博客subtitle: “<em>我只是想把学过的知识真正变成自己的东西。慢下来，或许才比较快</em>“，多次花时间在捡起旧知识上的我不可谓感触不深。</p>
 <p>而一篇<a target="_blank" rel="noopener" href="https://www.zhihu.com/question/22164041/answer/148128347">知乎回答</a>中关于积累对于经验思维和认知的重要性的叙述，则是彻底讲明白了学习中如何快速熟悉一个新邻域的关键所在。至少对于大多数人来说，起决定性作用的并非天赋，而是日复一日的积累和实践。</p>
@@ -269,7 +271,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://xingjiangyu.github.io/2021/02/24/hello-world/" data-id="ckm4job8500034kk67g6ce307" data-title="This Blog&#39;s Hello World" class="article-share-link">Share</a>
+      <a data-url="http://xingjiangyu.github.io/2021/02/24/hello-world/" data-id="ckmd93tcg0002sok6aovu8t9l" data-title="This Blog&#39;s Hello World" class="article-share-link">Share</a>
       
       
       
@@ -308,7 +310,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://xingjiangyu.github.io/2021/02/22/C++-STL-%E7%9F%A5%E8%AF%86%E7%82%B9%E6%95%B4%E7%90%86%E5%92%8C%E5%AE%9E%E8%B7%B5/" data-id="ckm4job8300014kk6a9oh88b7" data-title="C++ STL 知识点整理和实践" class="article-share-link">Share</a>
+      <a data-url="http://xingjiangyu.github.io/2021/02/22/C++-STL-%E7%9F%A5%E8%AF%86%E7%82%B9%E6%95%B4%E7%90%86%E5%92%8C%E5%AE%9E%E8%B7%B5/" data-id="ckmd93tc80000sok62tpa54yo" data-title="C++ STL 知识点整理和实践" class="article-share-link">Share</a>
       
       
       
@@ -346,7 +348,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://xingjiangyu.github.io/2021/02/22/%E5%9F%BA%E4%BA%8EKDTree%E7%9A%84%E9%AB%98%E7%B2%BE%E5%BA%A6%E5%9C%B0%E5%9B%BE%E8%BD%A6%E9%81%93%E5%AE%9A%E4%BD%8D%E7%AE%97%E6%B3%95/" data-id="ckm4job8b00074kk6alcg22uw" data-title="基于KDTree的高精度地图车道定位算法" class="article-share-link">Share</a>
+      <a data-url="http://xingjiangyu.github.io/2021/02/22/%E5%9F%BA%E4%BA%8EKDTree%E7%9A%84%E9%AB%98%E7%B2%BE%E5%BA%A6%E5%9C%B0%E5%9B%BE%E8%BD%A6%E9%81%93%E5%AE%9A%E4%BD%8D%E7%AE%97%E6%B3%95/" data-id="ckmd93tcl0004sok6e540c013" data-title="基于KDTree的高精度地图车道定位算法" class="article-share-link">Share</a>
       
       
       
@@ -384,7 +386,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://xingjiangyu.github.io/2021/02/22/%E4%B8%80%E7%A7%8D%E6%94%B9%E8%BF%9B%E5%9E%8B%E7%9A%84%E9%AB%98%E7%B2%BE%E5%BA%A6%E5%9C%B0%E5%9B%BEAStar%E5%AF%BB%E8%B7%AF%E7%AE%97%E6%B3%95/" data-id="ckm4job8a00064kk6frkh18q7" data-title="一种改进型的高精度地图AStar寻路算法" class="article-share-link">Share</a>
+      <a data-url="http://xingjiangyu.github.io/2021/02/22/%E4%B8%80%E7%A7%8D%E6%94%B9%E8%BF%9B%E5%9E%8B%E7%9A%84%E9%AB%98%E7%B2%BE%E5%BA%A6%E5%9C%B0%E5%9B%BEAStar%E5%AF%BB%E8%B7%AF%E7%AE%97%E6%B3%95/" data-id="ckmd93tcn0007sok63lyhb3y3" data-title="一种改进型的高精度地图AStar寻路算法" class="article-share-link">Share</a>
       
       
       
@@ -424,7 +426,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://xingjiangyu.github.io/2021/02/22/%E7%8A%B6%E6%80%81%E7%AE%80%E5%8D%95%E8%AE%B0%E5%BD%95/" data-id="ckm4job8i00084kk6d4hn8vvk" data-title="状态简单记录" class="article-share-link">Share</a>
+      <a data-url="http://xingjiangyu.github.io/2021/02/22/%E7%8A%B6%E6%80%81%E7%AE%80%E5%8D%95%E8%AE%B0%E5%BD%95/" data-id="ckmd93tco0008sok6999zgv33" data-title="状态简单记录" class="article-share-link">Share</a>
       
       
       
@@ -464,7 +466,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://xingjiangyu.github.io/2021/02/22/%E3%80%8AMulti-View-Geometry-in-Computer-Vision%E3%80%8B%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/" data-id="ckm4job8600044kk65fco0m7y" data-title="《Multi-View Geometry in Computer Vision》阅读笔记 -- Post 1" class="article-share-link">Share</a>
+      <a data-url="http://xingjiangyu.github.io/2021/02/22/%E3%80%8AMulti-View-Geometry-in-Computer-Vision%E3%80%8B%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/" data-id="ckmd93tck0003sok6gxv5hps1" data-title="《Multi-View Geometry in Computer Vision》阅读笔记 -- Post 1" class="article-share-link">Share</a>
       
       
       
@@ -502,7 +504,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://xingjiangyu.github.io/2021/02/22/More-Effective-C++-%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/" data-id="ckm4job8400024kk6bnoubfv1" data-title="More Effective C++ 阅读笔记 -- Post 1" class="article-share-link">Share</a>
+      <a data-url="http://xingjiangyu.github.io/2021/02/22/More-Effective-C++-%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/" data-id="ckmd93tcf0001sok6c6fthsy1" data-title="More Effective C++ 阅读笔记 -- Post 1" class="article-share-link">Share</a>
       
       
       

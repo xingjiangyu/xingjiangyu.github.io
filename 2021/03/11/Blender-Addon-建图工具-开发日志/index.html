@@ -6,15 +6,15 @@
   
   <title>Blender Addon 建图工具 开发日志 | Xingjiang&#39;s BlogX</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="第一次Demo视频演示总结视频建议：  演示用词更加规范 逻辑性需要加强，可以按照“绘制的道路类型（直线，曲线，单双车道等)– 车道编辑 – 物体放置” 这样的顺序组织。 场景丰富度需要增加，比如放一排树之类的。  待解决Bugs： 1. 重复点击新建道路后会由于Operator状态未清空生成新的Mesh -- 可考虑使用SceneRecord作为状态指示  2. 交通锥等导入模型由于Origin">
+  <meta name="description" content="第一次Demo视频演示总结 (03-11)视频建议：  演示用词更加规范 逻辑性需要加强，可以按照“绘制的道路类型（直线，曲线，单双车道等)– 车道编辑 – 物体放置” 这样的顺序组织。 场景丰富度需要增加，比如放一排树之类的。  待解决Bugs：  重复点击新建道路后会由于Operator状态未清空生成新的Mesh – 可考虑使用SceneRecord作为状态指示 交通锥等导入模型由于Origi">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Blender Addon 建图工具 开发日志">
 <meta property="og:url" content="http://xingjiangyu.github.io/2021/03/11/Blender-Addon-%E5%BB%BA%E5%9B%BE%E5%B7%A5%E5%85%B7-%E5%BC%80%E5%8F%91%E6%97%A5%E5%BF%97/index.html">
 <meta property="og:site_name" content="Xingjiang&#39;s BlogX">
-<meta property="og:description" content="第一次Demo视频演示总结视频建议：  演示用词更加规范 逻辑性需要加强，可以按照“绘制的道路类型（直线，曲线，单双车道等)– 车道编辑 – 物体放置” 这样的顺序组织。 场景丰富度需要增加，比如放一排树之类的。  待解决Bugs： 1. 重复点击新建道路后会由于Operator状态未清空生成新的Mesh -- 可考虑使用SceneRecord作为状态指示  2. 交通锥等导入模型由于Origin">
+<meta property="og:description" content="第一次Demo视频演示总结 (03-11)视频建议：  演示用词更加规范 逻辑性需要加强，可以按照“绘制的道路类型（直线，曲线，单双车道等)– 车道编辑 – 物体放置” 这样的顺序组织。 场景丰富度需要增加，比如放一排树之类的。  待解决Bugs：  重复点击新建道路后会由于Operator状态未清空生成新的Mesh – 可考虑使用SceneRecord作为状态指示 交通锥等导入模型由于Origi">
 <meta property="og:locale">
 <meta property="article:published_time" content="2021-03-11T07:22:53.000Z">
-<meta property="article:modified_time" content="2021-03-11T07:22:56.480Z">
+<meta property="article:modified_time" content="2021-03-11T07:28:06.071Z">
 <meta property="article:author" content="XJ Yu">
 <meta property="article:tag" content="Blender Python, Multi-View Geometry, CPP Programming, Machine Learning">
 <meta name="twitter:card" content="summary">
@@ -100,19 +100,20 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <h2 id="第一次Demo视频演示总结"><a href="#第一次Demo视频演示总结" class="headerlink" title="第一次Demo视频演示总结"></a>第一次Demo视频演示总结</h2><p>视频建议：</p>
+        <h2 id="第一次Demo视频演示总结-03-11"><a href="#第一次Demo视频演示总结-03-11" class="headerlink" title="第一次Demo视频演示总结 (03-11)"></a>第一次Demo视频演示总结 (03-11)</h2><p>视频建议：</p>
 <ol>
 <li>演示用词更加规范</li>
 <li>逻辑性需要加强，可以按照“绘制的道路类型（直线，曲线，单双车道等)– 车道编辑 – 物体放置” 这样的顺序组织。</li>
 <li>场景丰富度需要增加，比如放一排树之类的。</li>
 </ol>
 <p>待解决Bugs：</p>
-<pre><code>1. 重复点击新建道路后会由于Operator状态未清空生成新的Mesh -- 可考虑使用SceneRecord作为状态指示
- 2. 交通锥等导入模型由于Origin未调整导致部分模型陷入道路表面下
- 3. 绿化带时不时无法生成 -- 可能是Road Mesh生成函数的检查条件导致
-</code></pre>
+<ol>
+<li>重复点击新建道路后会由于Operator状态未清空生成新的Mesh – 可考虑使用SceneRecord作为状态指示</li>
+<li>交通锥等导入模型由于Origin未调整导致部分模型陷入道路表面下</li>
+<li>绿化带时不时无法生成 – 可能是Road Mesh生成函数的检查条件导致</li>
+</ol>
 <p>待实现features:</p>
-<p>​    和 2021-03-01 计划的一致，另有增加：</p>
+<p>  和 2021-03-01 计划的一致，另有增加：</p>
 <ul>
 <li><input disabled="" type="checkbox"> 道路的z轴方向坡度调整</li>
 </ul>
@@ -172,7 +173,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://xingjiangyu.github.io/2021/03/11/Blender-Addon-%E5%BB%BA%E5%9B%BE%E5%B7%A5%E5%85%B7-%E5%BC%80%E5%8F%91%E6%97%A5%E5%BF%97/" data-id="ckm4job7w00004kk690gog227" data-title="Blender Addon 建图工具 开发日志" class="article-share-link">Share</a>
+      <a data-url="http://xingjiangyu.github.io/2021/03/11/Blender-Addon-%E5%BB%BA%E5%9B%BE%E5%B7%A5%E5%85%B7-%E5%BC%80%E5%8F%91%E6%97%A5%E5%BF%97/" data-id="ckmd93tcm0005sok66pedeblc" data-title="Blender Addon 建图工具 开发日志" class="article-share-link">Share</a>
       
       
       
