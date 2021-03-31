@@ -4,17 +4,17 @@
   <meta charset="utf-8">
   
   
-  <title>Xingjiang&#39;s BlogX</title>
+  <title>构建道路中的弯道分段参数方程 | Xingjiang&#39;s BlogX</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="方案1：根据手绘弯道多段线，拟合成（clothoid-arc-clothoid）参数方程。 见 一种多段线转分段参数曲线的拟合方法。 方案2：摈弃手绘估计弯道，直接读取待连接两条道路首尾端点位置朝向（曲率需要预估和根据转弯半径设限），输出连接曲线（符合缓和曲线 + 圆弧的组合形式）。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Xingjiang&#39;s BlogX">
+<meta property="og:title" content="构建道路中的弯道分段参数方程">
 <meta property="og:url" content="http://xingjiangyu.github.io/2021/03/31/%E6%9E%84%E5%BB%BA%E9%81%93%E8%B7%AF%E4%B8%AD%E7%9A%84%E5%BC%AF%E9%81%93%E5%88%86%E6%AE%B5%E5%8F%82%E6%95%B0%E6%96%B9%E7%A8%8B/index.html">
 <meta property="og:site_name" content="Xingjiang&#39;s BlogX">
 <meta property="og:description" content="方案1：根据手绘弯道多段线，拟合成（clothoid-arc-clothoid）参数方程。 见 一种多段线转分段参数曲线的拟合方法。 方案2：摈弃手绘估计弯道，直接读取待连接两条道路首尾端点位置朝向（曲率需要预估和根据转弯半径设限），输出连接曲线（符合缓和曲线 + 圆弧的组合形式）。">
 <meta property="og:locale">
-<meta property="article:published_time" content="2021-03-31T12:14:01.795Z">
-<meta property="article:modified_time" content="2021-03-31T12:18:54.898Z">
+<meta property="article:published_time" content="2021-03-31T12:31:12.000Z">
+<meta property="article:modified_time" content="2021-03-31T12:30:54.568Z">
 <meta property="article:author" content="XJ Yu">
 <meta property="article:tag" content="Blender Python, Multi-View Geometry, CPP Programming, Machine Learning">
 <meta name="twitter:card" content="summary">
@@ -68,10 +68,10 @@
         
           <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Suche"></a>
       </nav>
       <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://xingjiangyu.github.io"></form>
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Suche"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://xingjiangyu.github.io"></form>
       </div>
     </div>
   </div>
@@ -81,12 +81,22 @@
         <section id="main"><article id="post-构建道路中的弯道分段参数方程" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2021/03/31/%E6%9E%84%E5%BB%BA%E9%81%93%E8%B7%AF%E4%B8%AD%E7%9A%84%E5%BC%AF%E9%81%93%E5%88%86%E6%AE%B5%E5%8F%82%E6%95%B0%E6%96%B9%E7%A8%8B/" class="article-date">
-  <time class="dt-published" datetime="2021-03-31T12:14:01.795Z" itemprop="datePublished">2021-03-31</time>
+  <time class="dt-published" datetime="2021-03-31T12:31:12.000Z" itemprop="datePublished">2021-03-31</time>
 </a>
     
   </div>
   <div class="article-inner">
     
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      构建道路中的弯道分段参数方程
+    </h1>
+  
+
+      </header>
     
     <div class="e-content article-entry" itemprop="articleBody">
       
@@ -96,7 +106,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://xingjiangyu.github.io/2021/03/31/%E6%9E%84%E5%BB%BA%E9%81%93%E8%B7%AF%E4%B8%AD%E7%9A%84%E5%BC%AF%E9%81%93%E5%88%86%E6%AE%B5%E5%8F%82%E6%95%B0%E6%96%B9%E7%A8%8B/" data-id="ckmxfbbj90007tgk66wn10w5j" data-title="" class="article-share-link">Share</a>
+      <a data-url="http://xingjiangyu.github.io/2021/03/31/%E6%9E%84%E5%BB%BA%E9%81%93%E8%B7%AF%E4%B8%AD%E7%9A%84%E5%BC%AF%E9%81%93%E5%88%86%E6%AE%B5%E5%8F%82%E6%95%B0%E6%96%B9%E7%A8%8B/" data-id="ckmxfgye50007v4k689l5h0r8" data-title="构建道路中的弯道分段参数方程" class="article-share-link">Teilen</a>
       
       
       
@@ -107,7 +117,7 @@
 <nav id="article-nav">
   
     <a href="/2021/03/31/%E4%B8%80%E7%A7%8D%E5%A4%9A%E6%AE%B5%E7%BA%BF%E8%BD%AC%E5%88%86%E6%AE%B5%E5%8F%82%E6%95%B0%E6%9B%B2%E7%BA%BF%E7%9A%84%E6%8B%9F%E5%90%88%E6%96%B9%E6%B3%95/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
+      <strong class="article-nav-caption">Neuer</strong>
       <div class="article-nav-title">
         
           一种多段线转分段参数曲线的拟合方法
@@ -117,7 +127,7 @@
   
   
     <a href="/2021/02/24/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
+      <strong class="article-nav-caption">Älter</strong>
       <div class="article-nav-title">This Blog&#39;s Hello World</div>
     </a>
   
@@ -155,7 +165,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
+    <h3 class="widget-title">Archiv</h3>
     <div class="widget">
       <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/03/">March 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/02/">February 2021</a></li></ul>
     </div>
@@ -165,7 +175,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
+    <h3 class="widget-title">letzter Beitrag</h3>
     <div class="widget">
       <ul>
         
@@ -174,7 +184,7 @@
           </li>
         
           <li>
-            <a href="/2021/03/31/%E6%9E%84%E5%BB%BA%E9%81%93%E8%B7%AF%E4%B8%AD%E7%9A%84%E5%BC%AF%E9%81%93%E5%88%86%E6%AE%B5%E5%8F%82%E6%95%B0%E6%96%B9%E7%A8%8B/">(no title)</a>
+            <a href="/2021/03/31/%E6%9E%84%E5%BB%BA%E9%81%93%E8%B7%AF%E4%B8%AD%E7%9A%84%E5%BC%AF%E9%81%93%E5%88%86%E6%AE%B5%E5%8F%82%E6%95%B0%E6%96%B9%E7%A8%8B/">构建道路中的弯道分段参数方程</a>
           </li>
         
           <li>
