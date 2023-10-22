@@ -1,0 +1,158 @@
+{
+  "main": {
+    "id": "0d4e4a1a82762dd7",
+    "type": "split",
+    "children": [
+      {
+        "id": "cd51cded73a7ccf0",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "59bd3515dd4b4913",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "source/_posts/Github+Hexo+Obsidian Blog Notes.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "e69c41ce72acc85f",
+    "type": "split",
+    "children": [
+      {
+        "id": "f196b54130c1ea8f",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "a6d136b6e98a15ec",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "b5ccdf44eb40d914",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "622297825a3930be",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "b4033b4d1cd8c8b5",
+    "type": "split",
+    "children": [
+      {
+        "id": "ab64aa560d3afcaa",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "07aacbd061a4d330",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "source/_posts/Github+Hexo+Obsidian Blog Notes.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "e8c0ec4a8dcb3efe",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "source/_posts/Github+Hexo+Obsidian Blog Notes.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "f69a7a8ff42d4978",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "739c431d2a8c5051",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "source/_posts/Github+Hexo+Obsidian Blog Notes.md"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:打开快速切换": false,
+      "graph:查看关系图谱": false,
+      "canvas:新建白板": false,
+      "daily-notes:打开/创建今天的日记": false,
+      "templates:插入模板": false,
+      "command-palette:打开命令面板": false,
+      "random-note:开始漫游笔记": false,
+      "publish:发布更改": false
+    }
+  },
+  "active": "59bd3515dd4b4913",
+  "lastOpenFiles": [
+    "source/_posts/状态简单记录.md",
+    "source/_obsidian_template/Post Template.md",
+    "source/_posts/Github+Hexo+Obsidian Blog Notes.md",
+    "未命名.md"
+  ]
+}
